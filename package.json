@@ -1,0 +1,27 @@
+{
+  "name": "save-blog-list",
+  "version": "1.0.0",
+  "description": "A blog list application, that allows users to save information about interesting blogs they've stumbled across on the internet. For each listed blog we will save the author, title, URL, and amount of upvotes from users of the application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddoyediran/save-blog-list.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ddoyediran/save-blog-list/issues"
+  },
+  "homepage": "https://github.com/ddoyediran/save-blog-list#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.0"
+  }
+}
