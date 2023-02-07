@@ -4,10 +4,11 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const Blog = require("./models/blogs");
+const app = require("./app");
 
-const app = express();
+// const app = express();
 
-mongoose.set("strictQuery", false);
+// mongoose.set("strictQuery", false);
 // const blogSchema = new mongoose.Schema({
 //   title: String,
 //   author: String,
@@ -17,12 +18,12 @@ mongoose.set("strictQuery", false);
 
 // const Blog = mongoose.model("Blog", blogSchema);
 
-const mongoUrl = process.env.MONGODB_URI;
-mongoose.connect(mongoUrl);
+// const mongoUrl = process.env.MONGODB_URI;
+// mongoose.connect(mongoUrl);
 
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// app.use(cors());
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
 
 // GET: get all the data in the database
 app.get("/api/blogs", (req, res) => {
