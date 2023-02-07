@@ -1,10 +1,12 @@
-const http = require("http");
-const express = require("express");
-const cors = require("cors");
-const mongoose = require("mongoose");
-require("dotenv").config();
-const Blog = require("./models/blogs");
+// const http = require("http");
+//const express = require("express");
+//const cors = require("cors");
+//const mongoose = require("mongoose");
+//require("dotenv").config();
+// const Blog = require("./models/blogs");
 const app = require("./app");
+const logger = require("./utils/logger");
+const config = require("./utils/config");
 
 // const app = express();
 
@@ -25,24 +27,24 @@ const app = require("./app");
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
 
-// GET: get all the data in the database
-app.get("/api/blogs", (req, res) => {
-  Blog.find({}).then((blogs) => {
-    res.json(blogs);
-  });
-});
+// // GET: get all the data in the database
+// app.get("/api/blogs", (req, res) => {
+//   Blog.find({}).then((blogs) => {
+//     res.json(blogs);
+//   });
+// });
 
-// POST: add a single blog to the database
-app.post("/api/blogs", (req, res) => {
-  const blog = new Blog(req.body);
+// // POST: add a single blog to the database
+// app.post("/api/blogs", (req, res) => {
+//   const blog = new Blog(req.body);
 
-  blog.save().then((result) => {
-    res.status(201).json(result);
-  });
-});
+//   blog.save().then((result) => {
+//     res.status(201).json(result);
+//   });
+// });
 
-const PORT = process.env.PORT || 3003;
+// const PORT = process.env.PORT || 3003;
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(config.PORT, () => {
+  logger.info(`Server running on port ${config.PORT}`);
 });
