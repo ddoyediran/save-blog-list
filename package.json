@@ -4,10 +4,9 @@
   "description": "A blog list application, that allows users to save information about interesting blogs they've stumbled across on the internet. For each listed blog we will save the author, title, URL, and amount of upvotes from users of the application.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --verbose",
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "test": "jest --verbose",
     "lint": "eslint"
   },
   "repository": {
@@ -23,14 +22,16 @@
   "homepage": "https://github.com/ddoyediran/save-blog-list#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^6.9.0"
   },
   "devDependencies": {
-    "jest": "^29.4.2"
+    "jest": "^29.4.2",
+    "supertest": "^6.3.3"
   },
   "jest": {
     "testEnvironment": "node",
-    "globalTeardown": ".test/teardown.js"
+    "globalTeardown": "./tests/teardown.js"
   }
 }
